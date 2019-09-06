@@ -1,3 +1,10 @@
 development:
   adapter: sqlite3
   database: db/sections.db
+
+production:
+  adapter: postgresql
+  database: portfolio
+  username: tommy_origin@outlook.com
+  password: password
+  host: ENV["DATABASE_URL"]

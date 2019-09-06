@@ -494,12 +494,7 @@ h4{
       border-right-color: transparent;
     }
   }
-  .i {
-      color: white;
-      align-content: center;
-      justify-content: center;
-      font-size:48px;
-  }
+
 /* For mobile phones: */
 [class*="col-"] {
     width: 100%;
@@ -535,3 +530,12 @@ h4{
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
   }
+
+.contact_images{
+    text-align: center;
+}
+
+.contact_images a {
+   display: inline-block;
+}
+
