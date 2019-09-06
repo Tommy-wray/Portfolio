@@ -1,3 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,600);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+
+background{
+    color: black !important;
+}
+
 .container-custom {
     display: flex;
     height: 100vh;
@@ -6,16 +13,17 @@
 }
 
 .centered-content {
-    display: flex;
-    flex-direction: column;
     background-color: #161A20;
-    padding: 2rem;
-    border-radius: 0.75rem;
+    padding: 1rem;
+    justify-content: center;
+    flex: auto;
+}
+form {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-gap: 0.5vw;
 }
 
-form input:not(:first-child) {
-    margin-top: 0.5rem;
-}
 
 label {
     display: block;
@@ -24,10 +32,21 @@ label {
 
 input[type=text] {
     display: block;
-    color: #607d8b;
+    color: black;
     border: none;
     background-color: #FFFFFF;
     border-radius: 8px;
+    padding: 0.5rem;
+    height: 2vw;
+}
+
+input[type=url] {
+    display: block;
+    color: black;
+    border: none;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    height: 2vw;
     padding: 0.5rem;
 }
 
@@ -40,7 +59,7 @@ body{
 }
 
 .draw-border {
-    box-shadow: inset 0 0 0 4px #58afd1;
+    box-shadow: inset 0 0 0 2px #58afd1;
     color: #58afd1;
     transition: color 0.25s 0.0833333333s;
     position: relative;
@@ -57,12 +76,12 @@ body{
     right: 0;
   }
   .draw-border::before {
-    border-bottom-width: 4px;
-    border-left-width: 4px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
   }
   .draw-border::after {
-    border-top-width: 4px;
-    border-right-width: 4px;
+    border-top-width: 2px;
+    border-right-width: 2px;
   }
   .draw-border:hover {
     color: #af04ff;
@@ -86,45 +105,433 @@ body{
     cursor: pointer;
     line-height: 1.5;
     font: 700 1.2rem 'Roboto Slab', sans-serif;
-    padding: 1em 2em;
+    padding: 0.5em 1em;
     letter-spacing: 0.05rem;
-    margin: 1.5rem;
+    margin: 0.75rem;
   }
   .btn:focus {
     outline: 2px dotted #55d7dc;
   }
   
   textarea {
-    margin-top: 10px;
-    margin-left: 50px;
-    width: 500px;
-    height: 100px;
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    border-color: -moz-use-text-color #FFFFFF #FFFFFF -moz-use-text-color;
-    border-image: none;
+    height: 2vw;   
     border-radius: 6px 6px 6px 6px;
     border-style: none solid solid none;
     border-width: medium 1px 1px medium;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) inset;
     color: #555555;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 1em;
     line-height: 1.4em;
-    padding: 5px 8px;
-    transition: background-color 0.2s ease 0s;
     resize: none;
+    padding: 0.5rem;
   }
   
+
+#menu-toggler {
+  display: none;
+}
+#menu-toggler:checked + nav .hidemenu {
+  height: auto;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+h2 {
+  font-size: 40px;
+  letter-spacing: 2px;
+  margin-top: 0;
+  padding: 60px 0 15px 0;
+  color: #58afd1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* -- Navigation Menu -- */
+#mobileMenuLink {
+  display: none;
+}
+
+nav {
+  background-color: rgba(51, 51, 51, 0.95);
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+nav h1{
+    flex: none;
+    color: #fff;
+    margin: 0;
+    padding: 1rem;
+}
+
+
+.main-nav {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+  display: flex;
   
-  textarea:focus {
-      background: none repeat scroll 0 0 #FFFFFF;
-      outline-width: 0;
+}
+.main-nav li {
+  padding-right: 18px;
+}
+.main-nav li:last-child {
+  padding-right: 0;
+}
+.main-nav li a {
+  text-decoration: none;
+  color: #58afd1;
+  transition: color 0.3s;
+}
+.main-nav li a:hover {
+  color: rgb(183, 0, 255);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* -- Home Jumbotron -- */
+.jumbotorn {
+  background: url(photo2.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+main {
+  padding: 15vw 0px;
+  text-align: center;
+}
+main h1 {
+  font-size: 70px;
+  font-weight: 800;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+main p {
+  font-size: 30px;
+}
+main .btn {
+  background-color: #333;
+  color: #fff;
+  font-size: 22px;
+  text-decoration: none;
+  transition: background 0.3s;
+  padding: 15px 40px;
+}
+main .btn:hover {
+  background: white;
+  transition: background 0.3s;
+}
+
+/* -- About Section -- */
+.about {
+  background-color: #fff;
+  color: #333;
+}
+.about .container {
+  padding: 60px 0;
+  display: flex;
+}
+.about .container img {
+  border-radius: 50%;
+  margin: 60px 40px;
+}
+.about .container .about-text {
+  margin: 0;
+  overflow: hidden;
+  padding: 0 10px;
+}
+
+/* -- Portfolio Section -- */
+.portfolio {
+  background-image: url(photo1.jpg) no-repeat center center;
+  background-size: cover;
+  padding-bottom: 30px;
+}
+.portfolio .container {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.portfolio-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.portfolio-img {
+  width: 100%;
+  overflow: hidden;
+}
+.portfolio-img img {
+  width: 100%;
+}
+
+.portfolio h2, .portfolio p {
+  color: #fff;
+}
+.portfolio h3 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 10px 0 5px 0;
+}
+.portfolio .project-box {
+  background-color: #fff;
+  color: #000;
+  margin: 20px 0;
+  padding: 20px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  vertical-align: top;
+  width: 23%;
+}
+.portfolio .project-box p {
+  color: #000;
+}
+.portfolio .project-box:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+/* -- Contact Info -- */
+.contact {
+  background-color: #fff;
+
+}
+.contact .container {
+  text-align: center;
+}
+.contact h2 {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 800px) {
+  ul.main-nav {
+    justify-content: center;
   }
 
-  .flextest{
-      flex: 1;
-      flex-direction: row;
+  main h1 {
+    font-size: 50px;
+  }
+
+  .about .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about .container .about-text h2 {
+    text-align: center;
+  }
+
+  .portfolio .project-box {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 390px) {
+  nav {
+    position: relative;
+  }
+  nav .hidemenu {
+    overflow: hidden;
+    height: 0px;
+  }
+  nav .main-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav .main-nav li {
+    padding-bottom: 20px;
+    padding-right: 0px;
+  }
+  nav .main-nav li:last-child {
+    padding-bottom: 0;
+  }
+
+  #mobileMenuLink {
+    display: block;
+  }
+  #mobileMenuLink label {
+    cursor: pointer;
+  }
+
+  .jumbotorn {
+    height: auto;
+  }
+
+  .about .container {
+    padding: 40px 0;
+  }
+  .about .container img {
+    margin: 0;
+  }
+
+  .portfolio .project-box {
+    width: 70%;
+  }
+
+}
+
+.page_section {
+    display: grid;
+    grid-template-columns: 20vw 60vw 20vw;
+    grid-template-rows: auto auto auto;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+
+}
+
+.page_section h3{
+    grid-column: 2 / 2;
+    grid-row: 1 / 1;
+    text-align: center;
+    margin: 0;
+    justify-content: center;
+    align-content: center;
+    display: grid;
+    font-size: 10rem;
+}
+
+.page_section p{
+    padding: 1.5rem;
+    background-color: rgba(51, 51, 51, 0.95);
+    color: #FFFFFF;
+    grid-column: 2 / 2;
+    border-radius: 25px;
+    width: 100%;
+}
+.page_section a{
+    display: grid;
+    grid-column: 2/2;
+    grid-row: 3/3;
+
+}
+
+ a{
+     text-decoration: none;
+     color: red;
+ }
+ .wiggle:hover {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+h4{
+    grid-column: 2/2;
+    grid-row: 1/2;
+    margin: 0;
+    text-decoration: none;
+    color: white;
+    display: grid;
+    align-content: center;
+    height: 30px;
+}
+.line-1 {
+    position: relative;
+    top: 50%;
+    width: 20em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+  
+  /* Animation */
+  .anim-typewriter {
+    animation: typewriter 4s steps(44) 1s 1 normal both,
+      blinkTextCursor 500ms steps(44) infinite normal;
+  }
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 20em;
+    }
+  }
+  @keyframes blinkTextCursor {
+    from {
+      border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+  .i {
+      color: white;
+      align-content: center;
+      justify-content: center;
+      font-size:48px;
+  }
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+  }
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
   }

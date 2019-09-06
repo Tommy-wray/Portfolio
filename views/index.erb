@@ -1,10 +1,44 @@
-<header>Tommys portfolio</header>
-    <%sections.each do |section|%>
-        <section> 
-            <h1><%=section.title%></h1>
-            <p><%=section.content%></p>
+<head><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<meta name="HandheldFriendly" content="true">
+</head>
+<nav>
+ <h1>Tommy Wray</h1>
+ <ul class="main-nav">
+      <li><a href="#top">Home </a></li>
+      <li><a href="#about">About </a></li>
+      <li><a href="#contact">Contact </a></li>
+    </ul>
+</nav>
+
+    <div class='home'id='home'>
+        <section class='page_section' style="background-image:url(https://wallpaperplay.com/walls/full/2/f/f/25457.jpg#.XXEsu5GittA.link);"> 
+            <h4 class='line-1 anim-typewriter'>Hello and welcome to my portfolio</h4>
+        
+        </section> 
+    </div>
+
+    <div class='about' id='about'>
+        <section class='page_section' style="background-image:url(https://wallpaperplay.com/walls/full/b/8/7/25476.jpg#.XXEsux7-BE8.link);"> 
+            <h4 class='line-1 anim-typewriter'>Here is some information about my self</h4>
+        
+        </section> 
+    </div>
+    <div class='contact' id='contact'>
+        <section class='page_section' style="background-image:url(https://wallpaperplay.com/walls/full/3/0/4/25531.jpg#.XXEsu_EF9GM.link);"> 
+            <h4 class='line-1 anim-typewriter'>Here is some contact information</h4>
+            <h5><i class='fa fa-github'></i></h5>
+     
+        </section> 
 
 
-        </section>
+<%sections.each do |section|%>
+    <section class='page_section' style="background-image:url(<%=section.image%>);"> 
+        <h3><%=section.title%></h3>
+        <p><%=section.content%></p>
+       <a class="wiggle" href='/sections/<%=section.id%>/delete'>Delete</a>
+    </section> 
 <%end%>
 <%=erb :blog%>

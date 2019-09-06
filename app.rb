@@ -9,14 +9,14 @@ class App < Sinatra::Base
     content = @content 
 end
   post '/sections' do
-    content = params["content"]
-    Section.create(title: 'title', content: content, image: '', date:  Time.now.to_s, section_type: 'page')
+    Section.create(title: params[:title], content: params[:content], image: params[:image], date:  Time.now.to_s, section_type: 'page')
+    
 
-    erb :index, locals:{sections: Section.all}
+    redirect '/'
   end 
 
-  get '/blog/:id' do
-  posts_id = params['id']
-    Posts.find_by(id: posts_id)
+  get '/sections/:id/delete' do
+    Section.delete(params[:id])
+    redirect '/'
   end
 end

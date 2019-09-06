@@ -3,16 +3,15 @@
 
 <div class="centered-content">
         <div>
-            <h2>Enter info</h2>
+            <h2>Create a page</h2>
         </div>
-        <div>
-        <div class="flextest">
-            <form id='content_sub' action='/sections' method='POST'>
-            <input type='text' name='content'placeholder='Title'>
-            <textarea placeholder="Please enter the content here!" rows="20" name="content" id="content" cols="40" class="ui-autocomplete-input" autocomplete="on" role="textbox"></textarea>
+        <form id='content_sub' action='/sections' method='POST'>
+            <input type='text' name='title'placeholder='Title'>
+            <textarea placeholder="Please enter the content here!" rows="20" name="content" id="content" cols="40"  autocomplete="off" role="textbox"></textarea>
+            <input type='url' name='image'placeholder='IMG URL'>
+            
             <button input='submit'class="btn draw-border">Done</button>
-            </form>
+        </form>
 </div>
         </div>
-    </div>
     
